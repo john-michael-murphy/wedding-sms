@@ -62,7 +62,7 @@
     </header>
 
     <section>
-      <h2>What you're signing up for</h2>
+      <h2>What you're requesting to join</h2>
       <p>
         These texts come from <strong>John-Michael &amp; Tyler's Wedding</strong>
         (John Michael Murphy &amp; Tyler Crosby), the marriage celebration of the
@@ -74,7 +74,11 @@
     </section>
 
     <section id="signup">
-      <h2>Sign up for text updates</h2>
+      <h2>Request to join our wedding text thread</h2>
+      <p>
+        We keep our wedding texts to invited guests, so requests are reviewed
+        before anyone is added.
+      </p>
       <form id="signupForm" action="#" method="post" novalidate>
         <label class="field" for="name">Your name (optional)</label>
         <input type="text" id="name" name="name" autocomplete="name" />
@@ -100,7 +104,7 @@
           is optional and unchecked by default.
         </p>
 
-        <button type="submit">Sign me up</button>
+        <button type="submit">Request to join</button>
       </form>
       <p class="ok" id="signupOk"></p>
     </section>
@@ -129,7 +133,7 @@
 
   <script>
     (function () {
-      var INBOX = 'tinaplansweddings@icloud.com';
+      var INBOX = 'tina.plans.weddings@gmail.com';
 
       var su = document.getElementById('signupForm');
       var suOk = document.getElementById('signupOk');
@@ -144,19 +148,20 @@
           suOk.classList.add('show');
           return;
         }
-        var subject = "Wedding text sign-up: " + (name || phone);
+        var subject = "Request to join wedding texts: " + (name || phone);
         var body =
-          "New wedding text opt-in via wedding.john-michael.cv/sms-signup/\n\n" +
+          "New request to join the wedding text thread via wedding.john-michael.cv/sms-signup/\n\n" +
           "Name: " + (name || "(not given)") + "\n" +
           "Mobile: " + phone + "\n" +
           "Consent: YES — agreed to receive recurring wedding text updates " +
-          "(save-the-dates, RSVP, event details). Reply STOP to opt out.";
+          "(save-the-dates, RSVP, event details) if approved. Reply STOP to opt out.";
         window.location.href = "mailto:" + INBOX +
           "?subject=" + encodeURIComponent(subject) +
           "&body=" + encodeURIComponent(body);
-        suOk.textContent = (name ? name + ", y" : "Y") +
-          "ou're on the list! Your email app should open so you can send us your sign-up — just hit send. " +
-          "We'll text wedding updates from +1 (415) 599-4133. Reply STOP anytime to opt out.";
+        suOk.textContent = "Thanks" + (name ? ", " + name : "") +
+          "! We've received your request to join John-Michael & Tyler's wedding text thread. " +
+          "We review each request personally — if you're approved, you'll get a text from " +
+          "+1 (415) 599-4133. Reply STOP anytime to opt out.";
         suOk.classList.add('show');
         su.reset();
       });
