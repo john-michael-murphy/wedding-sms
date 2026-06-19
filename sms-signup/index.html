@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign up for text updates — John-Michael &amp; Tyler's Wedding</title>
+  <meta name="description" content="Sign up to receive wedding text updates from John-Michael &amp; Tyler — save-the-dates, RSVP, and event details. Unchecked opt-in, Reply STOP to unsubscribe." />
+  <style>
+    :root { color-scheme: light; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #2b2b33;
+      background: #faf7f2;
+    }
+    .wrap { max-width: 640px; margin: 0 auto; padding: 56px 24px 80px; }
+    header { text-align: center; margin-bottom: 40px; }
+    .mono { letter-spacing: .14em; text-transform: uppercase; font-size: 12px; color: #a08c6b; margin: 0 0 14px; }
+    h1 { font-size: 30px; font-weight: 600; margin: 0 0 8px; }
+    .sub { color: #6b6b76; margin: 0; }
+    nav { text-align: center; font-size: 13px; color: #9a9aa3; margin: 10px 0 0; }
+    nav a { margin: 0 8px; }
+    section { background: #fff; border: 1px solid #ece4d6; border-radius: 14px; padding: 24px 26px; margin: 18px 0; }
+    h2 { font-size: 18px; margin: 0 0 10px; }
+    p { margin: 0 0 12px; }
+    p:last-child { margin-bottom: 0; }
+    code { background: #f1ece2; padding: 2px 7px; border-radius: 6px; font-size: 15px; }
+    label.field { display: block; font-size: 14px; color: #6b6b76; margin: 0 0 4px; }
+    input[type=text], input[type=tel] {
+      width: 100%; padding: 11px 13px; font-size: 16px; border: 1px solid #d9cfbd;
+      border-radius: 10px; background: #fffdfa; margin: 0 0 16px;
+    }
+    .consent { display: flex; gap: 11px; align-items: flex-start; background: #f6f1e8;
+      border: 1px solid #e7ddca; border-radius: 10px; padding: 14px 15px; margin: 4px 0 18px; }
+    .consent input { margin: 4px 0 0; width: 18px; height: 18px; flex: 0 0 auto; }
+    .consent label { font-size: 14px; line-height: 1.5; color: #4a4a52; }
+    .hint { font-size: 13px; color: #9a9aa3; margin: 0 0 16px; }
+    button {
+      width: 100%; padding: 13px; font-size: 16px; font-weight: 600; color: #fff;
+      background: #b07b3e; border: 0; border-radius: 10px; cursor: pointer;
+    }
+    .ok { display: none; background: #eef6ec; border: 1px solid #cfe6c8; border-radius: 10px;
+      padding: 14px 15px; color: #2f5d2a; margin: 0; }
+    .ok.show { display: block; }
+    footer { text-align: center; color: #9a9aa3; font-size: 13px; margin-top: 36px; }
+    a { color: #b07b3e; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p class="mono">Wedding text updates</p>
+      <h1>John-Michael &amp; Tyler</h1>
+      <p class="sub">Sign up to get wedding updates by text</p>
+      <nav>
+        <a href="/">Home</a> &middot;
+        <a href="/#terms">Terms</a> &middot;
+        <a href="/#privacy">Privacy</a> &middot;
+        <a href="#unsubscribe">Unsubscribe</a>
+      </nav>
+    </header>
+
+    <section>
+      <h2>What you're signing up for</h2>
+      <p>
+        These texts come from <strong>John-Michael &amp; Tyler's Wedding</strong>
+        (John Michael Murphy &amp; Tyler Crosby), the marriage celebration of the
+        couple on May 22, 2027 in San Francisco. We send save-the-date
+        announcements, RSVP requests and confirmations, event details (date,
+        venue, travel, lodging), and answers to your questions &mdash; only to
+        invited guests. These are personal wedding messages, never marketing.
+      </p>
+    </section>
+
+    <section id="signup">
+      <h2>Sign up for text updates</h2>
+      <form id="signupForm" action="#" method="post" novalidate>
+        <label class="field" for="name">Your name (optional)</label>
+        <input type="text" id="name" name="name" autocomplete="name" />
+
+        <label class="field" for="phone">Mobile number</label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+1 (555) 123-4567" required />
+
+        <div class="consent">
+          <input type="checkbox" id="consent" name="consent" value="yes" />
+          <label for="consent">
+            I agree to receive recurring text messages from
+            <strong>John-Michael &amp; Tyler's Wedding</strong> (save-the-dates,
+            RSVP requests, event details, and reminders), sent on the couple's
+            behalf, at the number I provided. Message frequency varies. Message
+            and data rates may apply. Reply <code>STOP</code> to unsubscribe,
+            <code>HELP</code> for help. See our
+            <a href="/#privacy">Privacy Policy</a> and
+            <a href="/#terms">Terms &amp; Conditions</a>.
+          </label>
+        </div>
+        <p class="hint">
+          Consent is not a condition of any purchase or RSVP, and the box above
+          is optional and unchecked by default.
+        </p>
+
+        <button type="submit">Sign me up</button>
+      </form>
+      <p class="ok" id="signupOk"></p>
+    </section>
+
+    <section id="unsubscribe" class="keys">
+      <h2>Unsubscribe / opt out</h2>
+      <p>
+        You're always in control. <strong>Reply <code>STOP</code> to any text</strong>
+        from us at any time and we'll stop immediately &mdash; that's the fastest
+        way. Reply <code>HELP</code> for help.
+      </p>
+      <p>Prefer to opt out here? Enter your number and we'll remove it:</p>
+      <form id="unsubForm" action="#" method="post" novalidate>
+        <label class="field" for="unphone">Mobile number to remove</label>
+        <input type="tel" id="unphone" name="unphone" autocomplete="tel" placeholder="+1 (555) 123-4567" required />
+        <button type="submit">Unsubscribe this number</button>
+      </form>
+      <p class="ok" id="unsubOk"></p>
+    </section>
+
+    <footer>
+      &copy; 2026 John Michael Murphy &middot;
+      <a href="/">wedding.john-michael.cv</a>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var su = document.getElementById('signupForm');
+      var suOk = document.getElementById('signupOk');
+      su.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name = (document.getElementById('name').value || '').trim();
+        var phone = (document.getElementById('phone').value || '').trim();
+        if (!phone) { document.getElementById('phone').focus(); return; }
+        var agreed = document.getElementById('consent').checked;
+        suOk.textContent = agreed
+          ? ((name ? name + ', y' : 'Y') + "ou're on the list! We'll text wedding updates from +1 (415) 599-4133. Reply STOP anytime to opt out.")
+          : "Thanks! Please check the consent box so we have your permission to text you wedding updates. You can also just reply to a text from us.";
+        suOk.classList.add('show');
+        if (agreed) su.reset();
+      });
+
+      var un = document.getElementById('unsubForm');
+      var unOk = document.getElementById('unsubOk');
+      un.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var phone = (document.getElementById('unphone').value || '').trim();
+        if (!phone) { document.getElementById('unphone').focus(); return; }
+        unOk.textContent = "Done — " + phone + " has been opted out and won't receive wedding texts. You can also reply STOP to any message.";
+        unOk.classList.add('show');
+        un.reset();
+      });
+    })();
+  </script>
+</body>
+</html>
