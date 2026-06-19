@@ -129,6 +129,8 @@
 
   <script>
     (function () {
+      var INBOX = 'tinaplansweddings@icloud.com';
+
       var su = document.getElementById('signupForm');
       var suOk = document.getElementById('signupOk');
       su.addEventListener('submit', function (e) {
@@ -137,11 +139,26 @@
         var phone = (document.getElementById('phone').value || '').trim();
         if (!phone) { document.getElementById('phone').focus(); return; }
         var agreed = document.getElementById('consent').checked;
-        suOk.textContent = agreed
-          ? ((name ? name + ', y' : 'Y') + "ou're on the list! We'll text wedding updates from +1 (415) 599-4133. Reply STOP anytime to opt out.")
-          : "Thanks! Please check the consent box so we have your permission to text you wedding updates. You can also just reply to a text from us.";
+        if (!agreed) {
+          suOk.textContent = "Thanks! Please check the consent box so we have your permission to text you wedding updates. You can also just reply to a text from us.";
+          suOk.classList.add('show');
+          return;
+        }
+        var subject = "Wedding text sign-up: " + (name || phone);
+        var body =
+          "New wedding text opt-in via wedding.john-michael.cv/sms-signup/\n\n" +
+          "Name: " + (name || "(not given)") + "\n" +
+          "Mobile: " + phone + "\n" +
+          "Consent: YES — agreed to receive recurring wedding text updates " +
+          "(save-the-dates, RSVP, event details). Reply STOP to opt out.";
+        window.location.href = "mailto:" + INBOX +
+          "?subject=" + encodeURIComponent(subject) +
+          "&body=" + encodeURIComponent(body);
+        suOk.textContent = (name ? name + ", y" : "Y") +
+          "ou're on the list! Your email app should open so you can send us your sign-up — just hit send. " +
+          "We'll text wedding updates from +1 (415) 599-4133. Reply STOP anytime to opt out.";
         suOk.classList.add('show');
-        if (agreed) su.reset();
+        su.reset();
       });
 
       var un = document.getElementById('unsubForm');
@@ -150,7 +167,15 @@
         e.preventDefault();
         var phone = (document.getElementById('unphone').value || '').trim();
         if (!phone) { document.getElementById('unphone').focus(); return; }
-        unOk.textContent = "Done — " + phone + " has been opted out and won't receive wedding texts. You can also reply STOP to any message.";
+        var subject = "Wedding text unsubscribe: " + phone;
+        var body =
+          "Please unsubscribe this number from wedding text updates:\n\n" +
+          "Mobile: " + phone + "\n\nvia wedding.john-michael.cv/sms-signup/";
+        window.location.href = "mailto:" + INBOX +
+          "?subject=" + encodeURIComponent(subject) +
+          "&body=" + encodeURIComponent(body);
+        unOk.textContent = "Your email app should open so you can send your opt-out for " + phone +
+          " — just hit send. You can also reply STOP to any message to opt out instantly.";
         unOk.classList.add('show');
         un.reset();
       });
