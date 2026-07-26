@@ -127,7 +127,7 @@
 
     <footer>
       &copy; 2026 John Michael Murphy &middot;
-      <a href="/">wedding.john-michael.cv</a>
+      <a href="/">john-michael.cv</a>
     </footer>
   </div>
 
@@ -150,7 +150,7 @@
         }
         var subject = "Request to join wedding texts: " + (name || phone);
         var body =
-          "New request to join the wedding text thread via wedding.john-michael.cv/sms-signup/\n\n" +
+          "New request to join the wedding text thread via john-michael.cv/sms-signup/\n\n" +
           "Name: " + (name || "(not given)") + "\n" +
           "Mobile: " + phone + "\n" +
           "Consent: YES — agreed to receive recurring wedding text updates " +
@@ -175,7 +175,7 @@
         var subject = "Wedding text unsubscribe: " + phone;
         var body =
           "Please unsubscribe this number from wedding text updates:\n\n" +
-          "Mobile: " + phone + "\n\nvia wedding.john-michael.cv/sms-signup/";
+          "Mobile: " + phone + "\n\nvia john-michael.cv/sms-signup/";
         window.location.href = "mailto:" + INBOX +
           "?subject=" + encodeURIComponent(subject) +
           "&body=" + encodeURIComponent(body);
